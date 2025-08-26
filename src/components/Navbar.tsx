@@ -28,7 +28,7 @@ export default function Navbar() {
         {/* Logo */}
         <Link href="/" className="flex items-center space-x-3 text-gray-800 font-bold text-2xl hover:text-blue-600 transition-colors">
           <Image
-            src="/logo.jpg"
+            src="/logo.png"
             alt="Logo "
             width={40}
             height={40}
