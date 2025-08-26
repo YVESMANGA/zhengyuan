@@ -27,7 +27,8 @@ export default function Acceuil() {
     },
   ];
 
-  const [selectedMode, setSelectedMode] = useState(null);
+  // ✅ Correction ici
+  const [selectedMode, setSelectedMode] = useState<string | null>(null);
 
   const cooperationOptions = [
     {
@@ -110,7 +111,7 @@ export default function Acceuil() {
             <p className="mt-10 text-lg text-gray-700">
               Vous avez choisi :{" "}
               <strong className="text-blue-700">
-                {cooperationOptions.find((o) => o.id === selectedMode).title}
+                {cooperationOptions.find((o) => o.id === selectedMode)?.title}
               </strong>
             </p>
           )}
