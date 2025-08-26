@@ -11,8 +11,7 @@ export default function Hero() {
           ZY NOUVEL MATERIEL COMPAGNIE LTD - SARL
         </h1>
         <p className="text-lg md:text-xl mb-8">
-          Spécialistes du commerce général, import & export, BTP, immobilier et
-          services divers. Votre partenaire de confiance à Dakar et au-delà.
+          Spécialistes de la production de la poudre de calcium lourde, de la poudre de mastic et des revêtements imperméables.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link

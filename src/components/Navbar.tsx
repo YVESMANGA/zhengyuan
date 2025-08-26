@@ -18,7 +18,7 @@ export default function Navbar() {
   const links = [
     { href: '/', label: 'Accueil' },
     { href: '/about', label: 'À propos' },
-    { href: '/services', label: 'Services' },
+    { href: '/services', label: 'Produits' },
     { href: '/contact', label: 'Contact' },
   ]
 
@@ -26,7 +26,7 @@ export default function Navbar() {
     <nav className="sticky top-0 z-50 bg-white/70 backdrop-blur-md shadow-lg border-b border-gray-200 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="flex items-center space-x-3 text-gray-800 font-bold text-2xl hover:text-red-600 transition-colors">
+        <Link href="/" className="flex items-center space-x-3 text-gray-800 font-bold text-2xl hover:text-blue-600 transition-colors">
           <Image
             src="/logo.jpg"
             alt="Logo "

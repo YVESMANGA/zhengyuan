@@ -1,69 +1,119 @@
+'use client'
+
 import About from "@/components/About";
 import Hero from "@/components/Hero";
-import ServiceCard from "@/components/ServiceCard";
-import { Briefcase, Building2, Truck, Factory, Hammer, Home } from "lucide-react";
+import Image from "next/image";
+import { useState } from "react";
 
 export default function Acceuil() {
   const services = [
     {
-      icon: <Briefcase size={40} />,
-      title: "Commerce général & Import-Export",
+      image: "/p2.webp",
+      title: "Groupe (poudre) de ciment fin",
       description:
-        "Solutions fiables pour l’achat, la vente et la distribution de biens au Sénégal et à l’international.",
+        "Fabrication de poudre de calcium lourde de haute qualité pour diverses applications industrielles.",
     },
     {
-      icon: <Factory size={40} />,
-      title: "Finance & Industrie",
+      image: "/p1.jpg",
+      title: "Production de poudre de mastic",
       description:
-        "Investissements, gestion et développement d’activités industrielles et financières.",
+        "Création de poudre de mastic adaptée aux travaux de finition et de construction.",
     },
     {
-      icon: <Truck size={40} />,
-      title: "Transport & Transformation",
+      image: "/p3.avif",
+      title: "Revêtements liquides",
       description:
-        "Services logistiques et transformation de matières premières pour divers secteurs.",
+        "Solutions de revêtement imperméable pour protéger et durabiliser les surfaces.",
+    },
+  ];
+
+  const [selectedMode, setSelectedMode] = useState(null);
+
+  const cooperationOptions = [
+    {
+      id: "agents",
+      title: "Agents Régionaux",
+      description:
+        "Principaux distributeurs ayant des ressources dans l’industrie, agents exclusifs, OEM, marques, co-traitance, soutien aux prix compétitifs.",
     },
     {
-      icon: <Building2 size={40} />,
-      title: "Exploitation minière",
+      id: "distributeurs",
+      title: "Distributeurs Professionnels",
       description:
-        "Gestion, exploitation et valorisation de substances minérales avec respect des normes.",
-    },
-    {
-      icon: <Hammer size={40} />,
-      title: "BTP & Génie civil",
-      description:
-        "Construction, aménagement et infrastructures pour accompagner le développement urbain.",
-    },
-    {
-      icon: <Home size={40} />,
-      title: "Immobilier & Services",
-      description: "Projets immobiliers, gestion de biens et divers services liés au secteur.",
+        "Se concentrer sur des clients spécialisés dans des domaines particuliers, fournir un support technique prioritaire, droits de distribution préférentiels.",
     },
   ];
 
   return (
-    <div className="">
+    <div className="font-sans antialiased text-gray-800">
       <Hero />
       <About />
 
-      {/* Section Services */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-6xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-blue-700 mb-10 text-center">
-            Nos Services
+      {/* Section Produits */}
+      <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
+        <div className="max-w-6xl mx-auto px-6">
+          <h2 className="text-4xl font-bold text-blue-700 mb-12 text-center tracking-wide">
+            Nos Produits
           </h2>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
             {services.map((service, index) => (
-              <ServiceCard
+              <div
                 key={index}
-                icon={service.icon}
-                title={service.title}
-                description={service.description}
-              />
+                className="flex flex-col items-center bg-white rounded-2xl shadow-lg p-6 transform transition-transform duration-500 hover:scale-105 hover:shadow-2xl"
+              >
+                <div className="mb-6 relative w-full h-48 rounded-xl overflow-hidden">
+                  <Image
+                    src={service.image}
+                    alt={service.title}
+                    fill
+                    className="object-contain transition-transform duration-700 hover:scale-110"
+                  />
+                </div>
+                <h3 className="text-2xl font-semibold mb-3 text-center text-gray-800 transition-colors duration-300 hover:text-blue-600">
+                  {service.title}
+                </h3>
+                <p className="text-gray-600 text-center leading-relaxed">{service.description}</p>
+              </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Section Mode de coopération */}
+      <section className="py-20 bg-blue-50">
+        <div className="max-w-5xl mx-auto px-6 text-center">
+          <h2 className="text-4xl font-bold text-blue-700 mb-12 tracking-wide">
+            Mode de coopération
+          </h2>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+            {cooperationOptions.map((option) => (
+              <div
+                key={option.id}
+                onClick={() => setSelectedMode(option.id)}
+                className={`
+                  cursor-pointer p-8 rounded-3xl shadow-md transform transition-all duration-500
+                  ${selectedMode === option.id
+                    ? "bg-blue-600 text-white scale-105 shadow-2xl"
+                    : "bg-white hover:scale-105 hover:shadow-xl"
+                  }
+                `}
+              >
+                <h3 className="text-2xl font-semibold mb-3">{option.title}</h3>
+                <p className={selectedMode === option.id ? "text-white" : "text-gray-700"}>{option.description}</p>
+              </div>
+            ))}
+          </div>
+
+          {selectedMode && (
+            <p className="mt-10 text-lg text-gray-700">
+              Vous avez choisi :{" "}
+              <strong className="text-blue-700">
+                {cooperationOptions.find((o) => o.id === selectedMode).title}
+              </strong>
+            </p>
+          )}
         </div>
       </section>
     </div>
