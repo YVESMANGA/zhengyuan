@@ -4,11 +4,11 @@ export default function Hero() {
   return (
     <section
       className="relative bg-cover bg-center bg-no-repeat text-white py-20  w-full"
-      style={{ backgroundImage: "url('/btp.png')" }}
+      style={{ backgroundImage: "url('/hero1.jpg')" }}
     >
       <div className="text-center relative z-10">
         <h1 className="text-4xl md:text-6xl font-bold mb-6">
-          ZY NOUVEL MATERIEL COMPAGNIE LTD - SARL
+        Zhengyuan New Materials Co., Ltd
         </h1>
         <p className="text-lg md:text-xl mb-8">
           Spécialistes de la production de la poudre de calcium lourde, de la poudre de mastic et des revêtements imperméables.
