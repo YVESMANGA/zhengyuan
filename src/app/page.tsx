@@ -9,13 +9,13 @@ export default function Acceuil() {
   const services = [
     {
       image: "/p22.jpg",
-      title: "Groupe (poudre) de ciment fin",
+      title: "Poudre de calcium ultra (micro) fine",
       description:
-        "Fabrication de poudre de calcium lourde de haute qualité pour diverses applications industrielles.",
+        "(CACo3≥98%, taille de particule personnalisable 200-2500 mesh).",
     },
     {
       image: "/p1.jpg",
-      title: "Production de poudre de mastic",
+      title: "Poudre de mastic",
       description:
         "Création de poudre de mastic adaptée aux travaux de finition et de construction.",
     },
