@@ -8,7 +8,7 @@ import { useState } from "react";
 export default function Acceuil() {
   const services = [
     {
-      image: "/p2.jpg",
+      image: "/p22.jpg",
       title: "Groupe (poudre) de ciment fin",
       description:
         "Fabrication de poudre de calcium lourde de haute qualité pour diverses applications industrielles.",
@@ -20,7 +20,7 @@ export default function Acceuil() {
         "Création de poudre de mastic adaptée aux travaux de finition et de construction.",
     },
     {
-      image: "/p3.jpg",
+      image: "/p33.jpg",
       title: "Revêtements liquides",
       description:
         "Solutions de revêtement imperméable pour protéger et durabiliser les surfaces.",
