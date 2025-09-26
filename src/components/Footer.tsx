@@ -8,7 +8,7 @@ export default function Footer() {
         {/* Bloc 1 - Entreprise */}
         <div>
           <h2 className="text-xl font-bold text-white mb-3">
-            ZY NOUVEL MATERIEL COMPAGNIE LTD - SARL
+          Zhengyuan New Materials Co., Ltd
           </h2>
           <p className="text-sm">
             Commerce général, Import & Export, BTP, Immobilier et Services divers.

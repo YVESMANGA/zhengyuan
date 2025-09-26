@@ -4,7 +4,7 @@ import Image from "next/image";
 // Les mêmes produits que sur l’accueil
 const products = [
   {
-    image: "/p2.webp",
+    image: "/p2.jpg",
     title: "Groupe (poudre) de ciment fin",
     description:
       "Fabrication de poudre de calcium lourde de haute qualité pour diverses applications industrielles.",
@@ -16,7 +16,7 @@ const products = [
       "Création de poudre de mastic adaptée aux travaux de finition et de construction.",
   },
   {
-    image: "/p3.avif",
+    image: "/p3.jpg",
     title: "Revêtements liquides",
     description:
       "Solutions de revêtement imperméable pour protéger et durabiliser les surfaces.",

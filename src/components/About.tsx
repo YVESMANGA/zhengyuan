@@ -1,17 +1,20 @@
 export default function AboutPage() {
   return (
     <main className="w-full max-w-6xl mx-auto px-4 py-20 bg-gradient-to-b from-gray-50 to-gray-100">
-      
       {/* Section principale */}
       <div className="flex flex-col md:flex-row items-center gap-12 md:gap-16 bg-white rounded-3xl shadow-xl p-8 md:p-16 transform transition-transform hover:-translate-y-1">
         
-        {/* Colonne gauche : logo */}
-        <div className="md:w-1/2 flex justify-center">
-          <img 
-            src="/logo.png" 
-            alt="ZY NOUVEL MATERIEL COMPAGNIE LTD - SARL" 
-            className="w-72 h-auto object-contain rounded-xl border border-gray-200 shadow-lg transition-transform hover:scale-105"
-          />
+        {/* Colonne gauche : vidéo responsive */}
+        <div className="md:w-1/2 w-full">
+          <div className="relative w-full pt-[56.25%] rounded-xl overflow-hidden shadow-lg">
+            <iframe
+              src="vz.mp4" // 👉 Mets ici ton lien YouTube/Vimeo ou un fichier mp4 via /public
+              title="Présentation Zhengyuan"
+              className="absolute top-0 left-0 w-full h-full rounded-xl"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </div>
         </div>
 
         {/* Colonne droite : description */}
@@ -21,7 +24,7 @@ export default function AboutPage() {
           </h1>
 
           <p className="text-gray-700 text-lg md:text-xl leading-relaxed">
-            Zhengyuan Materials Co., Ltd. est située dans la ville de Xin’gaoer, au Xin’gaoer, avec une usine couvrant 12 000 m².
+            Zhengyuan Materials Co., Ltd. est située dans la ville de Xin’gaoer, au Xin’gaoer, avec une usine couvrant 12 000 m².
           </p>
 
           <p className="text-gray-700 text-lg md:text-xl leading-relaxed">
@@ -33,7 +36,7 @@ export default function AboutPage() {
           </p>
 
           <p className="text-gray-700 text-lg md:text-xl leading-relaxed">
-            Capacité de production : 100 000 tonnes par an, dont 50 000 tonnes de peinture et 35 000 tonnes de poudre.
+            Capacité de production : 100 000 tonnes par an, dont 50 000 tonnes de peinture et 35 000 tonnes de poudre.
           </p>
 
           {/* Badges points forts */}
@@ -57,7 +60,6 @@ export default function AboutPage() {
               Expertise sectorielle
             </span>
           </div>
-
         </div>
       </div>
     </main>

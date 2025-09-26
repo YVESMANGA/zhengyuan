@@ -1,17 +1,20 @@
 'use client'
 
 import About from "@/components/About";
+import Actualites from "@/components/Actualites";
+import Fcontacts from "@/components/Fcontacts";
 import Hero from "@/components/Hero";
+import Why from "@/components/Why";
 import Image from "next/image";
 import { useState } from "react";
 
 export default function Acceuil() {
   const services = [
     {
-      image: "/p2.webp",
-      title: "Groupe (poudre) de ciment fin",
+      image: "/p22.jpg",
+      title: "Poudre de calcium ultra (micro) fine",
       description:
-        "Fabrication de poudre de calcium lourde de haute qualité pour diverses applications industrielles.",
+        "(CACo3≥98%, taille de particule personnalisable 200-2500 mesh).",
     },
     {
       image: "/p1.jpg",
@@ -20,14 +23,16 @@ export default function Acceuil() {
         "Création de poudre de mastic adaptée aux travaux de finition et de construction.",
     },
     {
-      image: "/p3.avif",
+      image: "/p33.jpg",
       title: "Revêtements liquides",
       description:
         "Solutions de revêtement imperméable pour protéger et durabiliser les surfaces.",
     },
   ];
 
-  const [selectedMode, setSelectedMode] = useState(null);
+  // ✅ Correction ici
+  const [selectedMode, setSelectedMode] = useState<string | null>(null);
+  
 
   const cooperationOptions = [
     {
@@ -80,6 +85,10 @@ export default function Acceuil() {
         </div>
       </section>
 
+      
+      <Actualites/>
+      <Why/> 
+      
       {/* Section Mode de coopération */}
       <section className="py-20 bg-blue-50">
         <div className="max-w-5xl mx-auto px-6 text-center">
@@ -110,12 +119,15 @@ export default function Acceuil() {
             <p className="mt-10 text-lg text-gray-700">
               Vous avez choisi :{" "}
               <strong className="text-blue-700">
-                {cooperationOptions.find((o) => o.id === selectedMode).title}
+                {cooperationOptions.find((o) => o.id === selectedMode)?.title}
               </strong>
             </p>
           )}
         </div>
-      </section>
+      </section> 
+      <Fcontacts/>
     </div>
+
+    
   );
 }
